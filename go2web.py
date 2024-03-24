@@ -12,13 +12,19 @@ args = parser.parse_args()
 
 
 if args.url:
-    response = requests.get(args.url)
-
-    if response.status_code == 200:
+    response = requests.get(args.url, allow_redirects=False)
+    if response:
+        if response.history:
+            print('Request was redirected')
+            for resp in response.history:
+                print(resp.status_code, resp.url)
+            print('Final destination:', response.status_code, response.url)
+        else:
+            print('Request was not redirected')
         print(f"GET request successful! , Status_code = {response.status_code}")
 
-    else:
-        print(f"Erorr, Status code: {response.status_code}")
+    if response.status_code == 404:
+        print(f"Page not found!, Status code: {response.status_code}")
 
 
 
@@ -44,12 +50,15 @@ if args.search:
         for searchWrapper in soup.find_all('h3'): #this line may change in future based on google's web page structure
             search_tag = searchWrapper.text
             search_link = searchWrapper.findPrevious('a').get('href')
-            result = {'text': search_tag, 'link': search_link}
-            output.append(result)
+            search_link = search_link.replace("/url?esrc=s&q=&rct=j&sa=U&url=", '')
+            if(search_link[0] == 'h'):
+                result = {'text': search_tag, 'link': search_link}
+                output.append(result)
 
 
         return output
 
     for i in google(args.search):
         print(i)
+
 
