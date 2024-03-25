@@ -42,6 +42,7 @@ if args.url:
         print(f"Error, Status code: {response.status_code}")
 
 
+
 big_word = ''
 if isinstance(args.search, list):
     for i in args.search:

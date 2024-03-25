@@ -66,7 +66,11 @@
  [],
  False,
  False,
+<<<<<<< HEAD
  1711326359,
+=======
+ 1711321157,
+>>>>>>> 1223ca1c1bd691e5b58d10034463688eccd416e1
  [('run.exe',
    'd:\\python '
    'projects\\env\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
