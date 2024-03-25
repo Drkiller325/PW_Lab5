@@ -66,15 +66,11 @@
  [],
  False,
  False,
-<<<<<<< HEAD
- 1711326359,
-=======
+<<<<<<<<< Temporary merge branch 1
  1711321157,
-<<<<<<< HEAD
->>>>>>> 1223ca1 (add http redirect)
-=======
->>>>>>> 1223ca1c1bd691e5b58d10034463688eccd416e1
->>>>>>> cbf13b8e3f6c95c7b48a6ad692e41427d6dd0435
+=========
+ 1711326359,
+>>>>>>>>> Temporary merge branch 2
  [('run.exe',
    'd:\\python '
    'projects\\env\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
