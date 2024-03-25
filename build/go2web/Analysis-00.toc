@@ -263,6 +263,15 @@
   ('ast',
    'C:\\Users\\Dr.Killer\\AppData\\Local\\Programs\\Python\\Python39\\lib\\ast.py',
    'PYMODULE'),
+<<<<<<< HEAD
+=======
+  ('stringprep',
+   'C:\\Users\\Dr.Killer\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Dr.Killer\\AppData\\Local\\Programs\\Python\\Python39\\lib\\tracemalloc.py',
+   'PYMODULE'),
+>>>>>>> 1223ca1 (add http redirect)
   ('subprocess',
    'C:\\Users\\Dr.Killer\\AppData\\Local\\Programs\\Python\\Python39\\lib\\subprocess.py',
    'PYMODULE'),
@@ -272,12 +281,15 @@
   ('tracemalloc',
    'C:\\Users\\Dr.Killer\\AppData\\Local\\Programs\\Python\\Python39\\lib\\tracemalloc.py',
    'PYMODULE'),
+<<<<<<< HEAD
   ('stringprep',
    'C:\\Users\\Dr.Killer\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stringprep.py',
    'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\Dr.Killer\\AppData\\Local\\Programs\\Python\\Python39\\lib\\_py_abc.py',
    'PYMODULE'),
+=======
+>>>>>>> 1223ca1 (add http redirect)
   ('bs4',
    'd:\\python projects\\env\\lib\\site-packages\\bs4\\__init__.py',
    'PYMODULE'),

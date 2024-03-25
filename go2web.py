@@ -28,6 +28,7 @@ if args.url:
             f.write(json.dumps(cache))
             print("response from server")
     response = requests.get(args.url, headers=headers, allow_redirects=False)
+
     if response:
         if response.history:
             print('Request was redirected')
@@ -40,6 +41,7 @@ if args.url:
 
     else:
         print(f"Error, Status code: {response.status_code}")
+
 
 
 big_word = ''
