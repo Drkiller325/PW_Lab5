@@ -1,18 +1,33 @@
+import json
+
 import requests
 import argparse
-import webbrowser
 from bs4 import BeautifulSoup
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument("-u", "--url", help="make an HTTP request to the specified URL and print the response")
-parser.add_argument("-s", "--search", help="make an HTTP request to search the term using your favorite search engine and print top 10 results")
-
+parser.add_argument("-s", "--search", nargs="+", help="make an HTTP request to search the term using your favorite search engine and print top 10 results")
 args = parser.parse_args()
 
 
 if args.url:
-    response = requests.get(args.url, allow_redirects=False)
+    with open("D:\Python Projects\PW_Lab5\cache.txt", 'r') as f:
+        cache = json.loads(f.readline())
+    headers = {
+        'Cache-Control': 'max-age=3600',  # Cache for 1 hour
+    }
+    if(args.url in cache):
+        print("response from cache")
+
+    if(args.url not in cache):
+        response = requests.get(args.url, headers=headers, allow_redirects=False)
+        cache = {}
+        cache[args.url] = response.status_code
+        with open("D:\Python Projects\PW_Lab5\cache.txt", 'w') as f:
+            f.write(json.dumps(cache))
+            print("response from server")
+    response = requests.get(args.url, headers=headers, allow_redirects=False)
     if response:
         if response.history:
             print('Request was redirected')
@@ -23,10 +38,17 @@ if args.url:
             print('Request was not redirected')
         print(f"GET request successful! , Status_code = {response.status_code}")
 
-    if response.status_code == 404:
-        print(f"Page not found!, Status code: {response.status_code}")
+    else:
+        print(f"Error, Status code: {response.status_code}")
 
 
+big_word = ''
+if isinstance(args.search, list):
+    for i in args.search:
+        big_word = big_word + i
+
+else:
+    big_word = args.search
 
 if args.search:
     headers_Get = {
@@ -58,7 +80,7 @@ if args.search:
 
         return output
 
-    for i in google(args.search):
+    for i in google(big_word):
         print(i)
 
 
