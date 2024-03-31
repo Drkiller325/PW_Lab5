@@ -66,11 +66,7 @@
  [],
  False,
  False,
-<<<<<<<<< Temporary merge branch 1
- 1711321157,
-=========
- 1711326359,
->>>>>>>>> Temporary merge branch 2
+ 1711883648,
  [('run.exe',
    'd:\\python '
    'projects\\env\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
