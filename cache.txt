@@ -1,1 +1,1 @@
-{"https://gist.github.com/strdr4605/b5c97f5268c56e01c1ee9ed9cba76abb": 200}
+{"https://www.tutorialspoint.com/http/http_responses.htm": 200}
