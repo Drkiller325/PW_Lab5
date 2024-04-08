@@ -36,9 +36,12 @@ if args.url:
         else:
             print('Request was not redirected')
         print(f"GET request successful! , Status_code = {response.status_code}")
-        print(response.headers.get("Content-Type"))
-        for key in response.headers:
-            print(f"{key} : {response.headers[key]}")
+        if(response.headers.get("Content-Type") == "application/json"):
+            response_dict = response.json()
+            print(json.dumps(response_dict, indent=4, sort_keys=True))
+        else:
+            for key in response.headers:
+                print(f"{key} : {response.headers[key]}")
 
     else:
         print(f"Error, Status code: {response.status_code}")
